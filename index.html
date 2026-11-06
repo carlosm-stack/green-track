@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EcoPuntos – Recicla y gana</title>
+<link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+<header><h1>♻️GREEN TRACK </h1><p>Transformando los residuos comerciales en valor real</p></header>
+<nav>
+  <button id="tCli" class="on">Soy cliente</button>
+  <button id="tAdm">Administrador <span id="bdg" class="badge hide">0</span></button>
+</nav>
+<main>
+<section id="vCli">
+  <div class="card">
+    <h2>Registrar material para recoger</h2>
+    <form id="f" onsubmit="return false">
+      <div class="row">
+        <div><label>Nombre</label><input id="nom" required></div>
+        <div><label>Celular</label><input id="tel" type="tel" required></div>
+      </div>
+      <div class="row">
+        <div><label>¿Qué vas a reciclar?</label><select id="mat"></select></div>
+        <div><label>¿Cuántos kilos?</label><input id="kg" type="number" min="1" step="0.5" value="10" required></div>
+      </div>
+      <label>Dirección de recogida</label><input id="dir" required>
+      <div class="row">
+        <div><label>Día</label><input id="dia" type="date" required></div>
+        <div><label>Hora</label><input id="hor" type="time" required></div>
+      </div>
+      <div class="est">Puntos estimados: <b id="est">0</b></div>
+      <button class="btn" id="go">Solicitar recogida</button>
+    </form>
+  </div>
+  <div class="card">
+    <h2>Mis puntos</h2>
+    <div class="pts"><span id="bal">0</span> pts</div>
+    <p class="mu">Los puntos se suman cuando el operario recoge tu material.</p>
+    <h2 style="margin-top:14px">Redimir</h2><div id="cat"></div>
+    <h2 style="margin-top:14px">Mis solicitudes</h2><div id="mis"></div>
+  </div>
+</section>
+
+<section id="vAdm" class="hide">
+  <div class="card"><h2>Pedidos de recogida</h2><div id="lista"></div></div>
+</section>
+</main>
+
+<div id="modal"><div class="card">
+  <h2>✅ ¡Solicitud enviada!</h2><div id="res"></div>
+  <button class="btn" id="ok">Listo</button>
+</div></div>
+<div id="toast"></div>
+
+<script src="./js/app.js"></script>
+</body>
+</html>
